@@ -140,58 +140,11 @@ function Home() {
             <p style={{
               fontSize: 'clamp(0.75rem, 2vw, 0.875rem)',
               color: '#4b5563',
-              margin: '0 0 1.5rem 0',
+              margin: '0',
               padding: '0 0.5rem'
             }}>
               📍 台北市士林區中山北路七段36號
             </p>
-            
-            {/* Uber Eats 按鈕 */}
-            <a
-              href="https://www.ubereats.com/tw/store/burger-oclock/N3XkkaJGRDCjAt-GaT6iXQ"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: '0.5rem',
-                padding: 'clamp(0.75rem, 2vw, 0.875rem) clamp(1rem, 3vw, 1.5rem)',
-                backgroundColor: '#000000',
-                color: '#ffffff',
-                textDecoration: 'none',
-                borderRadius: '8px',
-                fontSize: 'clamp(0.875rem, 2.5vw, 1rem)',
-                fontWeight: 600,
-                transition: 'all 0.3s ease',
-                border: '2px solid #000000',
-                whiteSpace: 'nowrap'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#ffffff'
-                e.currentTarget.style.color = '#000000'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#000000'
-                e.currentTarget.style.color = '#ffffff'
-              }}
-            >
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                aria-hidden="true"
-                style={{
-                  flexShrink: 0,
-                  width: 'clamp(16px, 4vw, 20px)',
-                  height: 'clamp(16px, 4vw, 20px)'
-                }}
-              >
-                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-8 2a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" />
-              </svg>
-              前往 UBER EATS
-            </a>
           </div>
         </div>
       </section>
@@ -357,6 +310,63 @@ function Home() {
                 </div>
               </article>
             ))}
+          </div>
+
+          {/* Uber Eats 按鈕 - 位於熱賣餐點區塊下方 */}
+          <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            marginTop: 'clamp(2rem, 5vw, 3rem)',
+            padding: '0 0.5rem'
+          }}>
+            <a
+              href="https://www.ubereats.com/tw/store/burger-oclock/N3XkkaJGRDCjAt-GaT6iXQ"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '0.5rem',
+                padding: 'clamp(0.75rem, 2vw, 0.875rem) clamp(1rem, 3vw, 1.5rem)',
+                backgroundColor: '#fbbf24',
+                color: '#111827',
+                textDecoration: 'none',
+                borderRadius: '8px',
+                fontSize: 'clamp(0.875rem, 2.5vw, 1rem)',
+                fontWeight: 600,
+                transition: 'all 0.3s ease',
+                border: '2px solid #fbbf24',
+                whiteSpace: 'nowrap'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#ffffff'
+                e.currentTarget.style.color = '#111827'
+                e.currentTarget.style.borderColor = '#ffffff'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '#fbbf24'
+                e.currentTarget.style.color = '#111827'
+                e.currentTarget.style.borderColor = '#fbbf24'
+              }}
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+                style={{
+                  flexShrink: 0,
+                  width: 'clamp(16px, 4vw, 20px)',
+                  height: 'clamp(16px, 4vw, 20px)'
+                }}
+              >
+                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-8 2a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" />
+              </svg>
+              前往 UBER EATS
+            </a>
           </div>
         </div>
       </section>

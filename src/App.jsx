@@ -1,4 +1,5 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Link } from 'react-router-dom'
+import { ClipboardList } from 'lucide-react'
 import Navbar from './components/Navbar'
 import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
@@ -155,47 +156,52 @@ function App() {
                 </svg>
               </a>
 
-              {/* Uber Eats 按鈕 - 文字圖樣式 */}
-              <a
-                href="https://www.ubereats.com/tw/store/burger-oclock/N3XkkaJGRDCjAt-GaT6iXQ"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="前往 Uber Eats 訂餐"
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  padding: 'clamp(0.5rem, 2vw, 0.625rem) clamp(0.875rem, 3vw, 1rem)',
-                  borderRadius: '24px',
-                  border: '2px solid #ffffff',
-                  backgroundColor: 'transparent',
-                  textDecoration: 'none',
-                  transition: 'all 0.3s ease',
-                  cursor: 'pointer',
-                  minWidth: 'clamp(100px, 25vw, 120px)',
-                  flexShrink: 0
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#ffffff'
-                  e.currentTarget.querySelector('span').style.color = '#111827'
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = 'transparent'
-                  e.currentTarget.querySelector('span').style.color = '#ffffff'
-                }}
-              >
-                <span style={{
-                  color: '#ffffff',
-                  fontSize: 'clamp(0.75rem, 2vw, 0.875rem)',
-                  fontWeight: 600,
-                  letterSpacing: '0.08em',
-                  transition: 'color 0.3s ease',
-                  fontFamily: 'Arial, sans-serif',
-                  whiteSpace: 'nowrap'
-                }}>
-                  Uber Eats
-                </span>
-              </a>
+              {/* 菜單圖示按鈕 */}
+              <div style={{ position: 'relative' }}>
+                <Link
+                  to="/menu"
+                  aria-label="前往菜單頁面"
+                  style={{
+                    width: 'clamp(40px, 10vw, 48px)',
+                    height: 'clamp(40px, 10vw, 48px)',
+                    borderRadius: '50%',
+                    border: '2px solid #ffffff',
+                    backgroundColor: 'transparent',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    textDecoration: 'none',
+                    transition: 'all 0.3s ease',
+                    cursor: 'pointer',
+                    flexShrink: 0
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = '#ffffff'
+                    const svg = e.currentTarget.querySelector('svg')
+                    if (svg) svg.setAttribute('stroke', '#111827')
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = 'transparent'
+                    const svg = e.currentTarget.querySelector('svg')
+                    if (svg) svg.setAttribute('stroke', '#ffffff')
+                  }}
+                >
+                  <ClipboardList
+                    size={24}
+                    stroke="#ffffff"
+                    strokeWidth={2}
+                    style={{
+                      transition: 'stroke 0.3s ease',
+                      width: 'clamp(20px, 5vw, 24px)',
+                      height: 'clamp(20px, 5vw, 24px)',
+                      flexShrink: 0,
+                      pointerEvents: 'none'
+                    }}
+                    aria-hidden="true"
+                  />
+                  <span style={{ position: 'absolute', width: '1px', height: '1px', padding: 0, margin: '-1px', overflow: 'hidden', clip: 'rect(0, 0, 0, 0)', whiteSpace: 'nowrap', border: 0 }}>前往菜單</span>
+                </Link>
+              </div>
             </div>
           </div>
 
