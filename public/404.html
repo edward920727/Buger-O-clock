@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Burger O'clock</title>
+    <script type="text/javascript">
+      // GitHub Pages 404 重定向處理
+      // 當直接訪問子路由（如 /12/menu）時，重定向到 index.html 讓 React Router 處理
+      var segmentCount = 1; // 保留 /12/ 這個路徑段
+      var l = window.location;
+      var path = l.pathname.split('/').slice(1 + segmentCount).join('/');
+      if (path) {
+        var redirect = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+          '/12/?' + path.replace(/&/g, '~and~') +
+          (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+          l.hash;
+        window.location.replace(redirect);
+      }
+    </script>
+  </head>
+  <body>
+    <!-- 如果 JavaScript 被禁用，顯示重定向訊息 -->
+    <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
+      <h1>Redirecting...</h1>
+      <p>If you are not redirected, please <a href="/12/">click here</a>.</p>
+    </div>
+    <!-- 備用：如果重定向失敗，載入 React 應用 -->
+    <div id="root"></div>
+  </body>
+</html>
