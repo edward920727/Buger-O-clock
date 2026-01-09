@@ -6,13 +6,13 @@
     <title>Burger O'clock</title>
     <script type="text/javascript">
       // GitHub Pages 404 重定向處理
-      // 當直接訪問子路由（如 /Burger-O-clock/menu）時，重定向到 index.html 讓 React Router 處理
-      var segmentCount = 1; // 保留 /Burger-O-clock/ 這個路徑段
+      // 當直接訪問子路由（如 /Buger-O-clock/menu）時，重定向到 index.html 讓 React Router 處理
+      var segmentCount = 1; // 保留 /Buger-O-clock/ 這個路徑段
       var l = window.location;
       var path = l.pathname.split('/').slice(1 + segmentCount).join('/');
       if (path) {
         var redirect = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-          '/Burger-O-clock/?' + path.replace(/&/g, '~and~') +
+          '/Buger-O-clock/?' + path.replace(/&/g, '~and~') +
           (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
           l.hash;
         window.location.replace(redirect);
@@ -23,7 +23,7 @@
     <!-- 如果 JavaScript 被禁用，顯示重定向訊息 -->
     <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
       <h1>Redirecting...</h1>
-      <p>If you are not redirected, please <a href="/Burger-O-clock/">click here</a>.</p>
+      <p>If you are not redirected, please <a href="/Buger-O-clock/">click here</a>.</p>
     </div>
     <!-- 備用：如果重定向失敗，載入 React 應用 -->
     <div id="root"></div>

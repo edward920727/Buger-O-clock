@@ -25,8 +25,8 @@ function Navbar() {
 
   const isActive = (path) => {
     let currentPath = location.pathname
-    if (currentPath.startsWith('/Burger-O-clock')) {
-      currentPath = currentPath.replace('/Burger-O-clock', '')
+    if (currentPath.startsWith('/Buger-O-clock')) {
+      currentPath = currentPath.replace('/Buger-O-clock', '')
     }
     
     if (path === '/') {
